@@ -38,7 +38,7 @@ function IndexPage(props) {
 }
 
 function BlogPosts({ posts }) {
-  return posts.map(post => <BlogPostPreview key={post.id} post={post.node} />);
+  return posts.map(post => <BlogPostPreview key={post.node.id} post={post.node} />);
 }
 
 export default IndexPage;
