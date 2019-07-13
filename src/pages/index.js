@@ -14,6 +14,7 @@ export const query = graphql`
           id
           slug
           tags
+          publishDate(formatString: "MMMM YYYY")
           title
           body {
             childMarkdownRemark {
@@ -31,7 +32,6 @@ function IndexPage(props) {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Posts</h1>
       {posts ? <BlogPosts posts={posts} /> : 'Loading...'}
     </Layout>
   );
