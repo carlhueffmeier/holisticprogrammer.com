@@ -2,33 +2,16 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { SiteTitle } from './header.styles';
+import { Wrapper, Container, SiteTitle } from './header.styles';
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <Wrapper>
+    <Container>
       <SiteTitle style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+        <Link to="/">{siteTitle}</Link>
       </SiteTitle>
-    </div>
-  </header>
+    </Container>
+  </Wrapper>
 );
 
 Header.propTypes = {

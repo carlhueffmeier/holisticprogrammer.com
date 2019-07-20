@@ -4,19 +4,18 @@ import get from 'lodash/fp/get';
 
 import Layout from './layout';
 import SEO from './seo';
-import BlogPostCaption from './blog-post-caption';
+import { PublishDate, BlogPostTitle } from './blog-post.styles';
 
 function BlogPost(props) {
   const title = get('data.contentfulBlogPost.title', props);
-  const tags = get('data.contentfulBlogPost.tags', props);
   const publishDate = get('data.contentfulBlogPost.publishDate', props);
   const body = get('data.contentfulBlogPost.body.childMarkdownRemark.html', props);
 
   return (
     <Layout>
       <SEO title={title} />
-      <h2>{title}</h2>
-      <BlogPostCaption publishDate={publishDate} tags={tags} />
+      <BlogPostTitle>{title}</BlogPostTitle>
+      <PublishDate>{publishDate}</PublishDate>
       <div
         dangerouslySetInnerHTML={{
           __html: body,

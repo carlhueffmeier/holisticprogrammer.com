@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import get from 'lodash/fp/get';
 
 import BlogPostCaption from './blog-post-caption';
+import { BlogPostTitle, Excerpt } from './blog-post-preview.styles';
 
 function BlogPost(props) {
   const slug = get('post.slug', props);
@@ -14,11 +15,13 @@ function BlogPost(props) {
 
   return (
     <article>
-      <h2>
-        <Link to={`/blog/${slug}`}>{title}</Link>
-      </h2>
-      <BlogPostCaption publishDate={publishDate} tags={tags} />
-      <p>{excerpt}</p>
+      <header>
+        <BlogPostCaption publishDate={publishDate} tags={tags} />
+        <BlogPostTitle>
+          <Link to={`/blog/${slug}`}>{title}</Link>
+        </BlogPostTitle>
+      </header>
+      <Excerpt>{excerpt}</Excerpt>
     </article>
   );
 }

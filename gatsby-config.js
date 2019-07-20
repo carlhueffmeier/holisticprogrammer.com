@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Lato:300,400,700`],
+        fonts: [`Libre Franklin:300,400,700`],
         display: 'swap',
       },
     },
